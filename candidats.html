@@ -12,12 +12,17 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <style>
     body {
-      background: url(./Ressources/bg_login.png) repeat-y;
+      background: url(./Ressources/bg_login.png);
       background-size: cover;
     }
-
+    .menu{
+    justify-content: space-between;
+  }
     .inputCandidat {
       width: 350px;
+    }
+    .categories{
+    justify-content: end;  
     }
   .containerCartes {
     width: 100%;
@@ -41,6 +46,7 @@
     .cartes {
       display: none; 
       position: relative;
+      margin-left: 2rem;
       width: 400px;
       aspect-ratio: 3/4;
       background-color: rgb(54, 104, 188);
@@ -101,26 +107,38 @@
       border-radius: 0.5rem;
     }
 */
-    @media (max-width: 767px) {
-      .containerCartes {
-       flex-direction: column;
-     margin: 0 auto;
-    
-       
-     
-      
-}
-      .containerCartes::-webkit-scrollbar {
-  display: none;
-}
-.cartes{
- width: 90%;
- padding-left: 0;
-}
-.test{
-  display: none;
-}
+@media (max-width: 767px) {
+  #numberSelect{
+    display: none;
+  }
+  .btnSearch{
+    display: none;
+  }
+  .inputCandidat {
+    justify-content:start;
+      max-width: 250px;
     }
+  .categories{
+    justify-content: end;  
+    }
+  
+  .containerCartes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .containerCartes::-webkit-scrollbar {
+    display: none;
+  }
+
+  .cartes {
+    min-width: 350px;
+    margin: 0 auto; 
+  }
+
+  
+}
+
   </style>
 </head>
 
@@ -162,21 +180,21 @@
       </div>
     </div>
   </nav>
-  <div class="container-fluid test">
+  <div class="container-fluid">
     <div class="row">
-      <div class="col my-3 d-flex justify-content-between align-items-center">
+      <div class="col my-3 d-flex align-items-center menu">
         <div class="d-flex">
           <select id="numberSelect" class="form-select" aria-label="Default select example">
-            <option value="2">2</option>
-            <option value="4">4</option>
-            <option value="6">6</option>
+            <option value="4">2</option>
+            <option value="6">4</option>
+            <option value="8">6</option>
           </select>
         </div>
-        <div class="d-flex align-items-center">
+        <div class="d-flex searchC">
           <input id="searchInput" type="text" class="form-control me-3 inputCandidat" placeholder="Search...">
-          <button class="btn btn-primary" type="button">rechercher</button>
+          <button class="btn btn-primary btnSearch" type="button">rechercher</button>
         </div>
-        <div class="d-flex">
+        <div class="d-flex categories">
           <select class="form-select" aria-label="Default select example">
             <option value="1">Ajouts récents</option>
             <option value="2">Populaire</option>
@@ -189,7 +207,7 @@
 
   <div class="containerCartes mt-3">
    
-    <div class="cartes my-4 ms-4">
+    <div class="cartes my-4 ">
       <h5 class="text-center my-1 fw-bold">Open to Work</h5>
       <p class="note fw-bold">94</p>
       <i class="fas fa-star"></i>
@@ -236,7 +254,7 @@
         </div>
       </div>
     </div>
-    <div class="cartes my-4 ms-4" style="background-color: rgb(230, 125, 182);">
+    <div class="cartes my-4 " style="background-color: rgb(230, 125, 182);">
       <h5 class="text-center my-1 fw-bold">Open to Work</h5>
       <p class="note fw-bold">94</p>
       <i class="fas fa-star"></i>
@@ -283,7 +301,7 @@
         </div>
       </div>
     </div>
-    <div class="cartes my-4 ms-4">
+    <div class="cartes my-4 ">
       <h5 class="text-center my-1 fw-bold">Open to Work</h5>
       <p class="note fw-bold">94</p>
       <i class="fas fa-star"></i>
@@ -330,7 +348,7 @@
         </div>
       </div>
     </div>
-    <div class="cartes my-4 ms-4">
+    <div class="cartes my-4 ">
       <h5 class="text-center my-1 fw-bold">Open to Work</h5>
       <p class="note fw-bold">94</p>
       <i class="fas fa-star"></i>
@@ -377,7 +395,7 @@
         </div>
       </div>
     </div>
-    <div class="cartes my-4 ms-4">
+    <div class="cartes my-4 ">
       <h5 class="text-center my-1 fw-bold">Open to Work</h5>
       <p class="note fw-bold">94</p>
       <i class="fas fa-star"></i>
