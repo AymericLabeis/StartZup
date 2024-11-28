@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
@@ -11,14 +11,21 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
   <style>
+    ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
     body {
      /* background: url(./Ressources/bg_login.png);*/
-     background-color: rgb(68, 68, 68);
+     background-color: rgb(221, 221, 221);
       background-size: cover;
     }
     .menu{
+      width: 100%;
     justify-content: space-between;
   }
+  
     .inputCandidat {
       width: 350px;
     }
@@ -28,11 +35,9 @@
   .containerCartes {
     width: 100%;
   display: flex;
- 
   justify-content: flex-start; 
-  
   overflow-x: auto; 
-  background-color: rgba(240, 248, 255, 0.445);
+  background-color: rgba(46, 46, 46, 0.8);
  
 }
 .containerCartes::-webkit-scrollbar {
@@ -44,70 +49,82 @@
   background: #0d56869d; 
   border-radius: 1rem;
 }
-    .cartes {
-      display: none; 
-      position: relative;
+.cartes {
+      display: none;  
       margin-left: 2rem;
-      width: 400px;
-      aspect-ratio: 3/4;
+      width: 350px;
       background-color: rgb(54, 104, 188);
       border-radius: 2rem;
-      border: 4px solid rgb(83, 215, 80);
+      border: 4px solid rgb(232, 232, 232);
       font-family: "Poppins", sans-serif;  
       letter-spacing: 1px;
-      display: none;
       flex-shrink: 0; 
+ }
+.infoCandidats{
+  width: 100%;
+  
+  position: relative;
+} 
+.cartes img {
+      width: 70%;
     }
-
-    .cartes img {
-      width: 50%;
-    }
-.cartes h5{
-  color:rgb(83, 215, 80);
+.statut, .poste {
+  position: absolute;
+  left: 0; 
+  right: 0;
+  width: 100%; 
+  text-align: center;  
 }
-.cartes h4{
-  color:rgb(253, 253, 253);
+.statut {
+  top: 0; 
+  color: rgb(83, 215, 80);
 }
-    .note {
-      position: absolute;
-      top: 40px;
-      left: 20px;
-      font-size: 2rem;
-      
+.poste {
+  top: 80%;
+  font-size: 1.6rem;
+  color: white;
+}
+.note {
+  position: absolute;
+  top: 20%;
+  left: 10%;
+  font-size: 2rem;   
     }
 .note, .hardNote{
   color: rgb(254, 254, 255);
 }
 .fa-star {
       position: absolute;
-      top: 40px;
-      right: 20px;
+      top: 20%;
+      right: 10%;
       font-size: 2.5rem;
-      color: rgb(212, 166, 12);
+      color: rgb(232,232,232);
     }
-    .hardNote{
-   
-      font-size: 1.3rem;
+    .softSkills{
+      font-size: 1rem;
+      color: white;
+      margin: -0.4rem 0rem;
+    }
+  .hardNote{
+    font-size: 1.3rem;
+    }
+    .competence{
+      width: 50%;
+      margin-bottom: -0.8rem;
+
     }
     .btnViewProfil{
-      width: 40%;
+      width: 50%;
       background-color: rgb(83, 215, 80);
-      padding: 0.5rem;
-      border: 2px solid rgb(255, 255, 255);
-      border-radius: 1rem;
-    }
-    /*
-    .barreDef {
-      background-color: rgba(5, 73, 105, 0.815);
-    }
-    .barre{
-      height: 15px;
-      width: 80px;
-      margin-left: 1rem;
-      background-color: rgb(212, 206, 206);
+      color: rgb(0, 0, 0);
+      font-size: 1.5rem;
+      padding: 0.2rem;
+      border: none;
       border-radius: 0.5rem;
     }
-*/
+ .viewCV{
+  display: none;
+ }
 @media (max-width: 767px) {
   #numberSelect{
     display: none;
@@ -115,28 +132,34 @@
   .btnSearch{
     display: none;
   }
+  .searchC{
+    width: 100%;
+  }
   .inputCandidat {
-    justify-content:start;
-      max-width: 250px;
+      width: 100%;
     }
   .categories{
     justify-content: end;  
     }
-  
   .containerCartes {
-    flex-direction: column;
-    align-items: center;
+  flex-direction: column;
+  align-items: center;
   }
-
   .containerCartes::-webkit-scrollbar {
     display: none;
   }
-
   .cartes {
-    width: 90%;
-    margin: 0 auto; 
-  }
+  width: 90%;
+  height: auto;
+  margin: 0 auto; 
 
+  }
+  .statut {
+  font-size: 2rem;
+}
+.poste {
+  font-size: 2rem;
+}
   
 }
 
@@ -166,7 +189,7 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav d-flex mx-auto my-auto mb-2 mb-lg-0">
           <li class="nav-item mx-2">
-            <a class="nav-link active" aria-current="page" href="./index.html">Accueil</a>
+            <a class="nav-link" aria-current="page" href="./index.html">Accueil</a>
           </li>
           <li class="nav-item mx-2">
             <a class="nav-link" href="./candidats.html">Candidats</a>
@@ -208,755 +231,195 @@
 
   <div class="containerCartes mt-3">
    
-    <div class="cartes my-4 " style="background-color: rgb(224, 153, 21);">
-      <h5 class="text-center my-1 fw-bold">Open to Work</h5>
-      <p class="note fw-bold">94</p>
-      <i class="fas fa-star"></i>
-      <img class="d-flex mx-auto" src="./Ressources/cardH.png" alt=""></img>
-      <h4 class="text-center">Développeur web</h4>
-      <div class=" mt-1">
+    <div class="cartes my-4 d-flex flex-column justify-content-center align-items-center">
+      <div class="infoCandidats">
+        <h5 class="mt-2 fw-bold statut">Open to Work</h5>
+        <p class="note fw-bold">94</p>
+        <i class="fas fa-star"></i>
+        <img class="d-flex mx-auto" src="./Ressources/hProfil.png" alt=""></img>
+        <img class="d-flex mx-auto d-none" src="./Ressources/hProfil.png" alt=""></img>
+        <h4 class="poste">Développeur web</h4>
+      </div>
+      
+      <div class=" mt-2">
         <h6 class="ms-3 fw-bolder">Soft Skills:</h6>
-        <p class="ms-3"  style="margin:-2px 10px; color: white;" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
+        <p class="ms-3 softSkills" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
     </div>
       <div class="mt-2">
         <h6 class="ms-3 fw-bold">Hard Skills:</h6>
-        <div class="d-flex px-2">
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
+        <div class="d-flex flex-wrap px-2 ">
+          <div class=" d-flex align-items-center competence">
+              <p class="hardNote fw-bold ms-2">90</p>
+              <p class="ms-2">HTML </p>
           </div>
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
+          <div class=" d-flex  align-items-center competence">
+            <p class="hardNote fw-bold ms-2">90</p>
+            <p class="ms-2">HTML</p>
         </div>
-        <div class="d-flex align-items-center justify-content-center mt-3">
-          <button class="btnViewProfil">Voir</button>
+        <div class=" d-flex align-items-center competence">
+          <p class="hardNote fw-bold ms-2">90</p>
+          <p class="ms-2">HTML</p>
+      </div>
+      <div class=" d-flex  align-items-center competence">
+        <p class="hardNote fw-bold ms-2">90</p>
+        <p class="ms-2">HTML</p>
+    </div>
+    <div class=" d-flex align-items-center competence">
+      <p class="hardNote fw-bold ms-2">90</p>
+      <p class="ms-2">HTML</p>
+  </div>
+  <div class=" d-flex  align-items-center competence">
+    <p class="hardNote fw-bold ms-2">90</p>
+    <p class="ms-2">HTML</p>
+</div>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-center mb-3 mt-1">
+          <button id="viewProfil" class="btnViewProfil">Voir profil</button>
         </div>
       </div>
     </div>
-    <div class="cartes my-4 " style="background-color: rgb(230, 125, 182);">
-      <h5 class="text-center my-1 fw-bold">Open to Work</h5>
-      <p class="note fw-bold">94</p>
-      <i class="fas fa-star"></i>
-      <img class="d-flex mx-auto" src="./Ressources/cardF.png" alt=""></img>
-      <h4 class="text-center">Infographiste</h4>
-      <div class=" mt-1">
-        <h6 class="ms-3 fw-bolder">Soft Skills:</h6>
-        <p class="ms-3"  style="margin:-2px 10px; color: white;" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
-    </div>
-      <div class="mt-2">
-        <h6 class="ms-3 fw-bold">Hard Skills:</h6>
-        <div class="d-flex px-2">
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex align-items-center justify-content-center mt-3">
-          <button class="btnViewProfil">Voir</button>
-        </div>
+    <div class="cartes my-4 d-flex flex-column justify-content-center align-items-center">
+      <div class="infoCandidats">
+        <h5 class="mt-2 fw-bold statut">Open to Work</h5>
+        <p class="note fw-bold">94</p>
+        <i class="fas fa-star"></i>
+        <img class="d-flex mx-auto d-none" src="./Ressources/hProfil.png" alt=""></img>
+        <img class="d-flex mx-auto " src="./Ressources/fProfil.png" alt=""></img>
+        <h4 class="poste">Développeur web</h4>
       </div>
-    </div>
-    <div class="cartes my-4 ">
-      <h5 class="text-center my-1 fw-bold">Open to Work</h5>
-      <p class="note fw-bold">94</p>
-      <i class="fas fa-star"></i>
-      <img class="d-flex mx-auto" src="./Ressources/cardH.png" alt=""></img>
-      <h4 class="text-center">Développeur web</h4>
-      <div class=" mt-1">
+      
+      <div class=" mt-2">
         <h6 class="ms-3 fw-bolder">Soft Skills:</h6>
-        <p class="ms-3"  style="margin:-2px 10px; color: white;" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
+        <p class="ms-3 softSkills" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
     </div>
       <div class="mt-2">
         <h6 class="ms-3 fw-bold">Hard Skills:</h6>
-        <div class="d-flex px-2">
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
+        <div class="d-flex flex-wrap px-2 ">
+          <div class=" d-flex align-items-center competence">
+              <p class="hardNote fw-bold ms-2">90</p>
+              <p class="ms-2">HTML ghjghj hdsjkh hjkhjk</p>
           </div>
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
+          <div class=" d-flex  align-items-center competence">
+            <p class="hardNote fw-bold ms-2">90</p>
+            <p class="ms-2">HTML</p>
         </div>
-        <div class="d-flex align-items-center justify-content-center mt-3">
-          <button class="btnViewProfil">Voir</button>
+        <div class=" d-flex align-items-center competence">
+          <p class="hardNote fw-bold ms-2">90</p>
+          <p class="ms-2">HTML</p>
+      </div>
+      <div class=" d-flex  align-items-center competence">
+        <p class="hardNote fw-bold ms-2">90</p>
+        <p class="ms-2">HTML</p>
+    </div>
+    <div class=" d-flex align-items-center competence">
+      <p class="hardNote fw-bold ms-2">90</p>
+      <p class="ms-2">HTML</p>
+  </div>
+  <div class=" d-flex  align-items-center competence">
+    <p class="hardNote fw-bold ms-2">90</p>
+    <p class="ms-2">HTML</p>
+</div>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-center mb-3 mt-1">
+          <button class="btnViewProfil">Voir profil</button>
         </div>
       </div>
     </div>
     <div class="cartes my-4 ">
-      <h5 class="text-center my-1 fw-bold">Open to Work</h5>
-      <p class="note fw-bold">94</p>
-      <i class="fas fa-star"></i>
-      <img class="d-flex mx-auto" src="./Ressources/cardH.png" alt=""></img>
-      <h4 class="text-center">Développeur web</h4>
-      <div class=" mt-1">
+      <div class="infoCandidats">
+        <h5 class="mt-2 fw-bold statut">Open to Work</h5>
+        <p class="note fw-bold">94</p>
+        <i class="fas fa-star"></i>
+        <img class="d-flex mx-auto" src="./Ressources/hProfil.png" alt=""></img>
+        <img class="d-flex mx-auto d-none" src="./Ressources/hProfil.png" alt=""></img>
+        <h4 class="poste">Développeur web</h4>
+      </div>
+      
+      <div class=" mt-2">
         <h6 class="ms-3 fw-bolder">Soft Skills:</h6>
-        <p class="ms-3"  style="margin:-2px 10px; color: white;" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
+        <p class="ms-3 softSkills" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
     </div>
       <div class="mt-2">
         <h6 class="ms-3 fw-bold">Hard Skills:</h6>
-        <div class="d-flex px-2">
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
+        <div class="d-flex flex-wrap px-2 ">
+          <div class=" d-flex align-items-center competence">
+              <p class="hardNote fw-bold ms-2">90</p>
+              <p class="ms-2">HTML ghjghj hdsjkh hjkhjk</p>
           </div>
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
+          <div class=" d-flex  align-items-center competence">
+            <p class="hardNote fw-bold ms-2">90</p>
+            <p class="ms-2">HTML</p>
         </div>
-        <div class="d-flex align-items-center justify-content-center mt-3">
-          <button class="btnViewProfil">Voir</button>
+        <div class=" d-flex align-items-center competence">
+          <p class="hardNote fw-bold ms-2">90</p>
+          <p class="ms-2">HTML</p>
+      </div>
+      <div class=" d-flex  align-items-center competence">
+        <p class="hardNote fw-bold ms-2">90</p>
+        <p class="ms-2">HTML</p>
+    </div>
+    <div class=" d-flex align-items-center competence">
+      <p class="hardNote fw-bold ms-2">90</p>
+      <p class="ms-2">HTML</p>
+  </div>
+  <div class=" d-flex  align-items-center competence">
+    <p class="hardNote fw-bold ms-2">90</p>
+    <p class="ms-2">HTML</p>
+</div>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-center mb-2">
+          <button class="btnViewProfil">Voir profil</button>
         </div>
       </div>
     </div>
     <div class="cartes my-4 ">
-      <h5 class="text-center my-1 fw-bold">Open to Work</h5>
-      <p class="note fw-bold">94</p>
-      <i class="fas fa-star"></i>
-      <img class="d-flex mx-auto" src="./Ressources/cardH.png" alt=""></img>
-      <h4 class="text-center">Développeur web</h4>
-      <div class=" mt-1">
-        <h6 class="ms-3 fw-bolder">Soft Skills:</h6>
-        <p class="ms-3"  style="margin:-2px 10px; color: white;" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
-    </div>
-      <div class="mt-2">
-        <h6 class="ms-3 fw-bold">Hard Skills:</h6>
-        <div class="d-flex px-2">
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex align-items-center justify-content-center mt-3">
-          <button class="btnViewProfil">Voir</button>
-        </div>
+      <div class="infoCandidats">
+        <h5 class="mt-2 fw-bold statut">Open to Work</h5>
+        <p class="note fw-bold">94</p>
+        <i class="fas fa-star"></i>
+        <img class="d-flex mx-auto d-none" src="./Ressources/hProfil.png" alt=""></img>
+        <img class="d-flex mx-auto " src="./Ressources/fProfil.png" alt=""></img>
+        <h4 class="poste">Développeur web</h4>
       </div>
-    </div>
-    <div class="cartes my-4">
-      <h5 class="text-center my-1 fw-bold">Open to Work</h5>
-      <p class="note fw-bold">94</p>
-      <i class="fas fa-star"></i>
-      <img class="d-flex mx-auto" src="./Ressources/cardH.png" alt=""></img>
-      <h4 class="text-center">Développeur web</h4>
-      <div class=" mt-1">
+      
+      <div class=" mt-2">
         <h6 class="ms-3 fw-bolder">Soft Skills:</h6>
-        <p class="ms-3"  style="margin:-2px 10px; color: white;" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
+        <p class="ms-3 softSkills" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
     </div>
       <div class="mt-2">
         <h6 class="ms-3 fw-bold">Hard Skills:</h6>
-        <div class="d-flex px-2">
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
+        <div class="d-flex flex-wrap px-2 ">
+          <div class=" d-flex align-items-center competence">
+              <p class="hardNote fw-bold ms-2">90</p>
+              <p class="ms-2">HTML ghjghj hdsjkh hjkhjk</p>
           </div>
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
+          <div class=" d-flex  align-items-center competence">
+            <p class="hardNote fw-bold ms-2">90</p>
+            <p class="ms-2">HTML</p>
         </div>
-        <div class="d-flex align-items-center justify-content-center mt-3">
-          <button class="btnViewProfil">Voir</button>
-        </div>
+        <div class=" d-flex align-items-center competence">
+          <p class="hardNote fw-bold ms-2">90</p>
+          <p class="ms-2">HTML</p>
       </div>
+      <div class=" d-flex  align-items-center competence">
+        <p class="hardNote fw-bold ms-2">90</p>
+        <p class="ms-2">HTML</p>
     </div>
-    <div class="cartes my-4">
-      <h5 class="text-center my-1 fw-bold">Open to Work</h5>
-      <p class="note fw-bold">94</p>
-      <i class="fas fa-star"></i>
-      <img class="d-flex mx-auto" src="./Ressources/cardH.png" alt=""></img>
-      <h4 class="text-center">Développeur web</h4>
-      <div class=" mt-1">
-        <h6 class="ms-3 fw-bolder">Soft Skills:</h6>
-        <p class="ms-3"  style="margin:-2px 10px; color: white;" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
-    </div>
-      <div class="mt-2">
-        <h6 class="ms-3 fw-bold">Hard Skills:</h6>
-        <div class="d-flex px-2">
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
+    <div class=" d-flex align-items-center competence">
+      <p class="hardNote fw-bold ms-2">90</p>
+      <p class="ms-2">HTML</p>
+  </div>
+  <div class=" d-flex  align-items-center competence">
+    <p class="hardNote fw-bold ms-2">90</p>
+    <p class="ms-2">HTML</p>
+</div>
         </div>
-        <div class="d-flex align-items-center justify-content-center mt-3">
-          <button class="btnViewProfil">Voir</button>
-        </div>
-      </div>
-    </div>
-    <div class="cartes my-4">
-      <h5 class="text-center my-1 fw-bold">Open to Work</h5>
-      <p class="note fw-bold">94</p>
-      <i class="fas fa-star"></i>
-      <img class="d-flex mx-auto" src="./Ressources/cardH.png" alt=""></img>
-      <h4 class="text-center">Développeur web</h4>
-      <div class=" mt-1">
-        <h6 class="ms-3 fw-bolder">Soft Skills:</h6>
-        <p class="ms-3"  style="margin:-2px 10px; color: white;" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
-    </div>
-      <div class="mt-2">
-        <h6 class="ms-3 fw-bold">Hard Skills:</h6>
-        <div class="d-flex px-2">
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex align-items-center justify-content-center mt-3">
-          <button class="btnViewProfil">Voir</button>
-        </div>
-      </div>
-    </div>
-    <div class="cartes my-4">
-      <h5 class="text-center my-1 fw-bold">Open to Work</h5>
-      <p class="note fw-bold">94</p>
-      <i class="fas fa-star"></i>
-      <img class="d-flex mx-auto" src="./Ressources/cardH.png" alt=""></img>
-      <h4 class="text-center">Développeur web</h4>
-      <div class=" mt-1">
-        <h6 class="ms-3 fw-bolder">Soft Skills:</h6>
-        <p class="ms-3"  style="margin:-2px 10px; color: white;" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
-    </div>
-      <div class="mt-2">
-        <h6 class="ms-3 fw-bold">Hard Skills:</h6>
-        <div class="d-flex px-2">
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex align-items-center justify-content-center mt-3">
-          <button class="btnViewProfil">Voir</button>
-        </div>
-      </div>
-    </div>
-    <div class="cartes my-4 " style="background-color: rgb(185, 156, 25);">
-      <h5 class="text-center my-1 fw-bold">Open to Work</h5>
-      <p class="note fw-bold">94</p>
-      <i class="fas fa-star"></i>
-      <img class="d-flex mx-auto" src="./Ressources/cardF.png" alt=""></img>
-      <h4 class="text-center">Infographiste</h4>
-      <div class=" mt-1">
-        <h6 class="ms-3 fw-bolder">Soft Skills:</h6>
-        <p class="ms-3"  style="margin:-2px 10px; color: white;" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
-    </div>
-      <div class="mt-2">
-        <h6 class="ms-3 fw-bold">Hard Skills:</h6>
-        <div class="d-flex px-2">
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex align-items-center justify-content-center mt-3">
-          <button class="btnViewProfil">Voir</button>
-        </div>
-      </div>
-    </div>
-    <div class="cartes my-4">
-      <h5 class="text-center my-1 fw-bold">Open to Work</h5>
-      <p class="note fw-bold">94</p>
-      <i class="fas fa-star"></i>
-      <img class="d-flex mx-auto" src="./Ressources/cardH.png" alt=""></img>
-      <h4 class="text-center">Développeur web</h4>
-      <div class=" mt-1">
-        <h6 class="ms-3 fw-bolder">Soft Skills:</h6>
-        <p class="ms-3"  style="margin:-2px 10px; color: white;" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
-    </div>
-      <div class="mt-2">
-        <h6 class="ms-3 fw-bold">Hard Skills:</h6>
-        <div class="d-flex px-2">
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex align-items-center justify-content-center mt-3">
-          <button class="btnViewProfil">Voir</button>
-        </div>
-      </div>
-    </div>
-    <div class="cartes my-4">
-      <h5 class="text-center my-1 fw-bold">Open to Work</h5>
-      <p class="note fw-bold">94</p>
-      <i class="fas fa-star"></i>
-      <img class="d-flex mx-auto" src="./Ressources/cardH.png" alt=""></img>
-      <h4 class="text-center">Développeur web</h4>
-      <div class=" mt-1">
-        <h6 class="ms-3 fw-bolder">Soft Skills:</h6>
-        <p class="ms-3"  style="margin:-2px 10px; color: white;" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
-    </div>
-      <div class="mt-2">
-        <h6 class="ms-3 fw-bold">Hard Skills:</h6>
-        <div class="d-flex px-2">
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex align-items-center justify-content-center mt-3">
-          <button class="btnViewProfil">Voir</button>
-        </div>
-      </div>
-    </div>
-    <div class="cartes my-4">
-      <h5 class="text-center my-1 fw-bold">Open to Work</h5>
-      <p class="note fw-bold">94</p>
-      <i class="fas fa-star"></i>
-      <img class="d-flex mx-auto" src="./Ressources/cardH.png" alt=""></img>
-      <h4 class="text-center">Développeur web</h4>
-      <div class=" mt-1">
-        <h6 class="ms-3 fw-bolder">Soft Skills:</h6>
-        <p class="ms-3"  style="margin:-2px 10px; color: white;" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
-    </div>
-      <div class="mt-2">
-        <h6 class="ms-3 fw-bold">Hard Skills:</h6>
-        <div class="d-flex px-2">
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex align-items-center justify-content-center mt-3">
-          <button class="btnViewProfil">Voir</button>
-        </div>
-      </div>
-    </div>
-    <div class="cartes my-4">
-      <h5 class="text-center my-1 fw-bold">Open to Work</h5>
-      <p class="note fw-bold">94</p>
-      <i class="fas fa-star"></i>
-      <img class="d-flex mx-auto" src="./Ressources/cardH.png" alt=""></img>
-      <h4 class="text-center">Développeur web</h4>
-      <div class=" mt-1">
-        <h6 class="ms-3 fw-bolder">Soft Skills:</h6>
-        <p class="ms-3"  style="margin:-2px 10px; color: white;" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
-    </div>
-      <div class="mt-2">
-        <h6 class="ms-3 fw-bold">Hard Skills:</h6>
-        <div class="d-flex px-2">
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex align-items-center justify-content-center mt-3">
-          <button class="btnViewProfil">Voir</button>
-        </div>
-      </div>
-    </div>
-    <div class="cartes my-4">
-      <h5 class="text-center my-1 fw-bold">Open to Work</h5>
-      <p class="note fw-bold">94</p>
-      <i class="fas fa-star"></i>
-      <img class="d-flex mx-auto" src="./Ressources/cardH.png" alt=""></img>
-      <h4 class="text-center">Développeur web</h4>
-      <div class=" mt-1">
-        <h6 class="ms-3 fw-bolder">Soft Skills:</h6>
-        <p class="ms-3"  style="margin:-2px 10px; color: white;" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
-    </div>
-      <div class="mt-2">
-        <h6 class="ms-3 fw-bold">Hard Skills:</h6>
-        <div class="d-flex px-2">
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex align-items-center justify-content-center mt-3">
-          <button class="btnViewProfil">Voir</button>
-        </div>
-      </div>
-    </div>
-    <div class="cartes my-4"  style="background-color: rgb(29, 151, 35);">
-      <h5 class="text-center my-1 fw-bold">Open to Work</h5>
-      <p class="note fw-bold">94</p>
-      <i class="fas fa-star"></i>
-      <img class="d-flex mx-auto" src="./Ressources/cardH.png" alt=""></img>
-      <h4 class="text-center">Développeur web</h4>
-      <div class=" mt-1">
-        <h6 class="ms-3 fw-bolder">Soft Skills:</h6>
-        <p class="ms-3"  style="margin:-2px 10px; color: white;" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
-    </div>
-      <div class="mt-2">
-        <h6 class="ms-3 fw-bold">Hard Skills:</h6>
-        <div class="d-flex px-2">
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
-          <div class="col-6 ">
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">90</p>
-              <p class="ms-2">HTML</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">CSS</p>
-            </div>
-            <div class="d-flex ms-2 align-items-center" style="margin-bottom:-20px;">
-              <p class="hardNote fw-bold">80</p>
-              <p class="ms-2">Javascript</p>
-            </div>
-          </div>
-        </div>
-        <div class="d-flex align-items-center justify-content-center mt-3">
-          <button class="btnViewProfil">Voir</button>
+
+        <div class="d-flex align-items-center justify-content-center mb-2">
+          <button class="btnViewProfil">Voir profil</button>
         </div>
       </div>
     </div>
@@ -967,6 +430,14 @@
     <button id="nextPage" class="btn btn-primary mx-2"><i class="fa-solid fa-arrow-right fs-2"></i></button>
   </div>
 
+<div class="container-fluid viewCV">
+  <div class="row">
+    <div class="col-8">
+        <h1>test</h1>
+    </div>
+  </div>
+</div>
+
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       const numberSelect = document.getElementById("numberSelect");
@@ -974,7 +445,7 @@
       const prevPageBtn = document.getElementById("prevPage");
       const nextPageBtn = document.getElementById("nextPage");
 
-      let currentPage = 0; // Page actuelle
+      let currentPage = 0;
       let cardsPerPage = parseInt(numberSelect.value); // Nombre de cartes par page
 
       // Fonction pour afficher les cartes d'une page donnée
