@@ -53,6 +53,16 @@ scale: 1.05;
 background-color: rgba(69, 164, 219, 0.4);
   
 }
+.dropdown-menu .dropdown-item {
+  color: #003b5e; 
+  font-weight: bold; 
+  font-size:1.1rem;
+}
+
+.dropdown-menu .dropdown-item:hover {
+  color: #ff6600; 
+  background-color: #f1f1f1;
+}
 .user-icons {
 display: flex;
 align-items: center;
@@ -84,6 +94,9 @@ padding: 0.2rem 0.8rem  !important;
 }
 .navbar-nav a:hover,.navbar i:hover, .imgUser:hover {   
     scale: 1; 
+}
+.dropdown-menu .dropdown-item {
+  font-size:1rem;
 }
 .dropdown-item{
   color: rgb(255, 255, 255);

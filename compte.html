@@ -1,35 +1,184 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Compte Utilisateur</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+*, ::before, ::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+        body {
+            font-family: "Poppins", sans-serif;   
+            font-family: "Montserrat", sans-serif;
+            letter-spacing: 1px;
+           background-color: aliceblue;
+           
+        } 
+        .formLogin{
+         background-color: rgba(0, 59, 94, 0.9);
+         color: rgb(255, 255, 255);
+         border-radius: 1rem;
+         border: 3px solid rgba(255, 255, 255, 0.781);
+        /* box-shadow: -10px 10px 15px rgba(140, 0, 168, 0.3);*/
+        }
+        .titleConnexion {
+         background-color: rgba(255, 255, 255, 0.4);
+         border-radius: 0.5rem;
+   
+}
+        .letter-spacing {
+            letter-spacing: 1px; 
+            
+        }
+        .error{
+            color: rgb(153, 19, 19);
+             
+        }
+        .forceMdp {
+            width: 40px;
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 2px;
+            transition: background-color 0.3s ease;
+        }
+       
+            @media (max-width: 767px) {
+    body {
+        
+    }
+}
+    </style>
 </head>
 <body>
-  <div class="container my-5">
-    <div class="text-center mb-4">
-      <h1>Bonjour Jean dupont</h1>
-      <p class="text-muted">Bienvenue sur votre espace personnel. </p>
+    <div class="container mt-3">
+        <div class="row d-flex justify-content-center align-items-center ">          
+            <div class="col-md-6 col-lg-6 col-11 justify-content-center align-items-center p-3 my-3 formLogin">
+                <form action="" method="post">
+                    <div class="d-flex align-items-center justify-content-center pt-2 my-2 titleConnexion">
+                    <h2>Mon compte</h2>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputName" class="form-label fs-5">Vous êtes :</label>
+                        <select class="form-select" aria-label="Default select example">
+                            <option value="1">étudiant</option>
+                            <option value="2">recruteur</option>
+                            <option value="3">manager</option>
+                            <option value="4">RH</option>
+                          </select>
+                    </div>
+                    
+                    <div class="mb-3 ">
+                        <label for="inputName" class="form-label fs-5">Nom</label>
+                        <input id="inputName" minlength="5" maxlength="50" type="text" placeholder="Entrez votre nom"
+                            class="form-control letter-spacing " required>   
+                             <p id="errorNom" class="error fs-5 my-1 ps-2"></p>
+                    </div>
+                    <div class="mb-3 ">
+                        <label for="inputName" class="form-label fs-5">Prénom</label>
+                        <input id="inputName" minlength="5" maxlength="50" type="text" placeholder="Entrez votre prénom"
+                            class="form-control letter-spacing " required>
+                            <p id="errorPrenom" class="error fs-5 my-1 ps-2"></p>
+                    </div>
+                    <div class="mb-3 ">
+                        <label for="inputEmail" class="form-label fs-5">Adresse E-mail</label>
+                        <input id="inputEmail" minlength="5" maxlength="50" type="email" placeholder="Entrez votre e-mail"
+                            class="form-control letter-spacing " aria-describedby="emailHelp" required>
+                            <p id="errorEMail" class="error fs-5 my-1 ps-2"></p>
+                    </div>
+                    <div class="mb-3">
+                        <label for="inputPassword" class="form-label fs-5">Mot de passe</label>
+                        <input id="inputPassword" minlength="6" maxlength="30" type="password" placeholder="Entrez votre mot de passe"
+                            class="form-control letter-spacing borderColor" required>
+                            <div class="d-flex justify-content-start my-3 d-none" id="displayPwr">
+                                <div class="forceMdp ms-2"></div>
+                                <div class="forceMdp ms-2"></div>
+                                <div class="forceMdp ms-2"></div>
+                                <div class="forceMdp ms-2"></div>
+                                <div class="forceMdp ms-2"></div>
+                            </div>                       
+                    </div>
+                    <div class="mb-4">
+                        <label for="inputPassword" class="form-label fs-5">Confirmez le mot de passe</label>
+                        <input id="inputConfirmPassword" minlength="6" maxlength="30" type="password" placeholder="Confirmez votre mot de passe"
+                            class="form-control letter-spacing borderColor" required>
+                            <p id="errorPassword" class="error fs-5 my-1 ps-2"></p>
+                    </div>
+                    <input type="submit" class="form-control btn btn-primary d-flex justify-content-center mx-auto my-1 w-100 letter-spacing fs-4 borderColor" value="Valider">
+                </form>
+                  
+            </div>         
+        </div>
     </div>
 
-    <div class="row justify-content-center">
-      <div class="col-md-6 mt-2">
-        <div class="list-group">
-          <a href="./modifier_compte.html" class="list-group-item list-group-item-action">
-            <i class="fa-solid fa-user-edit me-2"></i> Modifier mon compte
-          </a>
-          <a href="./modifier_compte.html" class="list-group-item list-group-item-action">
-            <i class="fa-solid fa-user-edit me-2"></i> Créer un CV
-          </a>
-          <a href="./logout.html" class="list-group-item list-group-item-action text-danger">
-            <i class="fa-solid fa-sign-out-alt me-2"></i> Déconnexion
-          </a>
+    <div class="container-fluid my-4">
+      <div class="row">
+        <div class="col">
+          <button class="btn btn-danger ms-3">Se déconnecter</button>
         </div>
       </div>
     </div>
-  </div>
 
+    <script>
+    const inputPassword = document.getElementById('inputPassword');
+    const displayPwr = document.getElementById('displayPwr'); 
+    const forceMdp = document.querySelectorAll('.forceMdp');
+
+// Fonction pour calculer la force du mot de passe
+function calcPassword(password) {
+    let strength = 0;
+
+    if (password.length >= 8) strength++; 
+    if (/[a-z]/.test(password)) strength++; 
+    if (/[A-Z]/.test(password)) strength++; 
+    if (/\d/.test(password)) strength++; 
+    if (/[@$!%*?&#]/.test(password)) strength++; 
+
+    return strength;
+}
+
+function updateforceMdp(strength) {
+    forceMdp.forEach((bar, index) => {
+        if (index < strength) {
+            if (strength === 1) {
+                bar.style.backgroundColor = "rgb(255, 0, 0)"; 
+            } else if (strength === 2) {
+                bar.style.backgroundColor = "rgb(255, 145, 0)"; 
+            } else if (strength === 3) {
+                bar.style.backgroundColor = "rgb(255, 215, 0)"; 
+            } else if (strength >= 4) {
+                bar.style.backgroundColor = "rgb(30, 255, 0)"; 
+            }
+            bar.classList.add('active');
+        } else {
+            bar.style.backgroundColor = "#e0e0e0"; 
+            bar.classList.remove('active');
+        }
+    });
+}
+
+// affichage des erreur 
+    inputPassword.addEventListener('input', (e) => {
+    const password = e.target.value;
+
+    if (password.length > 0) {
+        displayPwr.classList.remove('d-none');
+    } else {
+        displayPwr.classList.add('d-none');
+    }
+
+    const strength = calcPassword(password);
+    updateforceMdp(strength);
+});
+
+</script>
+
+    
 </body>
 </html>

@@ -19,9 +19,7 @@
     body {
      /* background: url(./Ressources/bg_login.png);*/
      background-color: rgba(118, 116, 212, 0.2);
-     
-      background-size: cover;
-      
+      background-size: cover; 
     }
     .menu{
       width: 100%;
@@ -34,10 +32,12 @@
     .categories{
     justify-content: end;  
     }
+    .categories option{
+      padding-right: 20px !important;
+    }
   .containerCartes {  
     width: 100%;
   display: flex;
-  justify-content: flex-start; 
   overflow-x: auto; 
   background-color: rgba(46, 46, 46, 0.8);
   background: linear-gradient(0deg, #1b1b1b, #bcd0fc, #313131);
@@ -57,7 +57,7 @@
   justify-content: center;
   align-items: center;
   opacity: 0;
-  margin-left: 2rem;
+  margin: 2rem 0rem 2rem 2rem;
   width: 350px;
   background-color: rgb(54, 104, 188);
   border-radius: 2rem;
@@ -66,8 +66,10 @@
   letter-spacing: 1px;
   flex-shrink: 0;
   animation: apparition 0.8s ease forwards;
-  box-shadow: 10px 5px 45px rgba(255, 255, 255, 0.349);
-  
+  box-shadow: 10px 5px 25px rgba(11, 8, 189, 0.349); 
+}
+.cartes:last-child{
+  margin-right: 2rem; 
 }
 @keyframes apparition {
   from {
@@ -96,10 +98,11 @@
 .statut {
   top: 0; 
   color: rgb(83, 215, 80);
+  
 }
 .poste {
-  top: 85%;
-  font-size: 1.6rem;
+  top: 80%;
+  font-size: 1.3rem;
   color: white;
 }
 .note {
@@ -118,12 +121,14 @@
       font-size: 2.2rem;
       color: rgb(228, 226, 226);
       transition: color 0.5s ease;
+      cursor: pointer;
     }
-    
-  
     .fa-star.active {
       scale: 1.2;
       color: rgb(214, 129, 18);
+    }
+    .contSK{
+      margin-top: -1rem;
     }
     .softSkills{
       font-size: 1rem;
@@ -142,11 +147,16 @@
     .btnViewProfil{
       width: 50%;
       background-color: rgb(83, 215, 80);
-      color: rgb(0, 0, 0);
+      color: rgb(255, 255, 255);
       font-size: 1.5rem;
       padding: 0.2rem;
       border: none;
       border-radius: 0.5rem;
+      border: 3px solid rgb(255, 255, 255)
+    }
+    .btnViewProfil:hover{
+      border: 3px solid rgb(15, 92, 0);
+      color:rgb(15, 92, 0);
     }
  .viewCV{
   display: none;
@@ -177,13 +187,16 @@
   .cartes {
   width: 90%;
   height: auto;
-  margin: 0 auto; 
+  margin: 1rem auto; 
+ 
+  
   }
+
   .statut {
-  font-size: 2rem;
+  font-size: 1.4rem;
 }
 .poste {
-  font-size: 2rem;
+  font-size: 1.6rem;
 }
   
 }
@@ -234,9 +247,9 @@
       <div class="col my-3 d-flex align-items-center menu">
         <div class="d-flex">
           <select id="numberSelect" class="form-select" aria-label="Default select example">
-            <option value="2">2</option>
             <option value="4">4</option>
             <option value="6">6</option>
+            <option value="8">8</option>
           </select>
         </div>
         <div class="d-flex searchC">
@@ -246,6 +259,7 @@
         <div class="d-flex categories">
           <select class="form-select" aria-label="Default select example">
             <option value="1">Ajouts récents</option>
+            <option value="2">Notes</option>
             <option value="2">Populaire</option>
             <option value="2">Favoris</option>
           </select>
@@ -256,18 +270,18 @@
 
   <div class="containerCartes mt-2">
    
-    <div class="cartes my-4">
+    <div class="cartes">
       <div class="infoCandidats">
         <h5 class="mt-2 fw-bold statut">Open to Work</h5>
         <p class="note fw-bold">94</p>
         <i class="fas fa-star"></i>
-        <img class="d-flex mx-auto" src="./Ressources/hProfil2.png" alt=""></img>
-        <img class="d-flex mx-auto d-none" src="./Ressources/hProfil.png" alt=""></img>
+        <img class="d-flex mx-auto" src="./Ressources/hProfil3.png" alt="profil hommme"></img>
+        <img class="d-flex mx-auto d-none" src="./Ressources/fProfil2.png" alt="profil femme"></img>
         <h4 class="poste">Développeur web</h4>
       </div>
       
-      <div class=" ">
-        <h6 class="ms-3 fw-bolder">Soft Skills:</h6>
+      <div class="contSK">
+        <h6 class="ms-3  fw-bolder">Soft Skills:</h6>
         <p class="ms-3 softSkills" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
     </div>
       <div class="mt-2">
@@ -304,7 +318,7 @@
         </div>
       </div>
     </div>
-    <div class="cartes my-4">
+    <div class="cartes">
       <div class="infoCandidats">
         <h5 class="mt-2 fw-bold statut">Open to Work</h5>
         <p class="note fw-bold">94</p>
@@ -314,7 +328,7 @@
         <h4 class="poste">Développeur web</h4>
       </div>
       
-      <div class="">
+      <div class="contSK">
         <h6 class="ms-3 fw-bolder">Soft Skills:</h6>
         <p class="ms-3 softSkills" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
     </div>
@@ -352,18 +366,18 @@
         </div>
       </div>
     </div>
-    <div class="cartes my-4">
+    <div class="cartes">
       <div class="infoCandidats">
         <h5 class="mt-2 fw-bold statut">Open to Work</h5>
         <p class="note fw-bold">94</p>
         <i class="fas fa-star"></i>
-        <img class="d-flex mx-auto" src="./Ressources/hProfil.png" alt=""></img>
-        <img class="d-flex mx-auto d-none" src="./Ressources/hProfil.png" alt=""></img>
+        <img class="d-flex mx-auto" src="./Ressources/hProfil3.png" alt="profil hommme"></img>
+        <img class="d-flex mx-auto d-none" src="./Ressources/fProfil2.png" alt="profil femme"></img>
         <h4 class="poste">Développeur web</h4>
       </div>
       
-      <div class=" ">
-        <h6 class="ms-3 fw-bolder">Soft Skills:</h6>
+      <div class="contSK">
+        <h6 class="ms-3  fw-bolder">Soft Skills:</h6>
         <p class="ms-3 softSkills" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
     </div>
       <div class="mt-2">
@@ -400,17 +414,17 @@
         </div>
       </div>
     </div>
-    <div class="cartes my-4 ">
+    <div class="cartes">
       <div class="infoCandidats">
         <h5 class="mt-2 fw-bold statut">Open to Work</h5>
         <p class="note fw-bold">94</p>
         <i class="fas fa-star"></i>
         <img class="d-flex mx-auto d-none" src="./Ressources/hProfil.png" alt=""></img>
-        <img class="d-flex mx-auto " src="./Ressources/fProfil.png" alt=""></img>
+        <img class="d-flex mx-auto " src="./Ressources/fProfil2.png" alt=""></img>
         <h4 class="poste">Développeur web</h4>
       </div>
       
-      <div class=" mt-2">
+      <div class="contSK">
         <h6 class="ms-3 fw-bolder">Soft Skills:</h6>
         <p class="ms-3 softSkills" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
     </div>
@@ -419,7 +433,55 @@
         <div class="d-flex flex-wrap px-2 ">
           <div class=" d-flex align-items-center competence">
               <p class="hardNote fw-bold ms-2">90</p>
-              <p class="ms-2">HTML ghjghj hdsjkh hjkhjk</p>
+              <p class="ms-2">HTML</p>
+          </div>
+          <div class=" d-flex  align-items-center competence">
+            <p class="hardNote fw-bold ms-2">90</p>
+            <p class="ms-2">CSS</p>
+        </div>
+        <div class=" d-flex align-items-center competence">
+          <p class="hardNote fw-bold ms-2">90</p>
+          <p class="ms-2">HTML</p>
+      </div>
+      <div class=" d-flex  align-items-center competence">
+        <p class="hardNote fw-bold ms-2">90</p>
+        <p class="ms-2">HTML</p>
+    </div>
+    <div class=" d-flex align-items-center competence">
+      <p class="hardNote fw-bold ms-2">90</p>
+      <p class="ms-2">HTML</p>
+  </div>
+  <div class=" d-flex  align-items-center competence">
+    <p class="hardNote fw-bold ms-2">90</p>
+    <p class="ms-2">HTML</p>
+</div>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-center mb-3 mt-1">
+          <button class="btnViewProfil">Voir profil</button>
+        </div>
+      </div>
+    </div>
+    <div class="cartes">
+      <div class="infoCandidats">
+        <h5 class="mt-2 fw-bold statut">Open to Work</h5>
+        <p class="note fw-bold">94</p>
+        <i class="fas fa-star"></i>
+        <img class="d-flex mx-auto" src="./Ressources/hProfil3.png" alt="profil hommme"></img>
+        <img class="d-flex mx-auto d-none" src="./Ressources/fProfil2.png" alt="profil femme"></img>
+        <h4 class="poste">Développeur web</h4>
+      </div>
+      
+      <div class="contSK">
+        <h6 class="ms-3  fw-bolder">Soft Skills:</h6>
+        <p class="ms-3 softSkills" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
+    </div>
+      <div class="mt-2">
+        <h6 class="ms-3 fw-bold">Hard Skills:</h6>
+        <div class="d-flex flex-wrap px-2 ">
+          <div class=" d-flex align-items-center competence">
+              <p class="hardNote fw-bold ms-2">90</p>
+              <p class="ms-2">HTML </p>
           </div>
           <div class=" d-flex  align-items-center competence">
             <p class="hardNote fw-bold ms-2">90</p>
@@ -443,11 +505,156 @@
 </div>
         </div>
 
-        <div class="d-flex align-items-center justify-content-center mb-2">
+        <div class="d-flex align-items-center justify-content-center mb-3 mt-1">
+          <button id="viewProfil" class="btnViewProfil ">Voir profil</button>
+        </div>
+      </div>
+    </div>
+    <div class="cartes">
+      <div class="infoCandidats">
+        <h5 class="mt-2 fw-bold statut">Open to Work</h5>
+        <p class="note fw-bold">94</p>
+        <i class="fas fa-star"></i>
+        <img class="d-flex mx-auto d-none" src="./Ressources/hProfil.png" alt=""></img>
+        <img class="d-flex mx-auto " src="./Ressources/fProfil2.png" alt=""></img>
+        <h4 class="poste">Développeur web</h4>
+      </div>
+      
+      <div class="contSK">
+        <h6 class="ms-3 fw-bolder">Soft Skills:</h6>
+        <p class="ms-3 softSkills" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
+    </div>
+      <div class="mt-2">
+        <h6 class="ms-3 fw-bold">Hard Skills:</h6>
+        <div class="d-flex flex-wrap px-2 ">
+          <div class=" d-flex align-items-center competence">
+              <p class="hardNote fw-bold ms-2">90</p>
+              <p class="ms-2">HTML</p>
+          </div>
+          <div class=" d-flex  align-items-center competence">
+            <p class="hardNote fw-bold ms-2">90</p>
+            <p class="ms-2">CSS</p>
+        </div>
+        <div class=" d-flex align-items-center competence">
+          <p class="hardNote fw-bold ms-2">90</p>
+          <p class="ms-2">HTML</p>
+      </div>
+      <div class=" d-flex  align-items-center competence">
+        <p class="hardNote fw-bold ms-2">90</p>
+        <p class="ms-2">HTML</p>
+    </div>
+    <div class=" d-flex align-items-center competence">
+      <p class="hardNote fw-bold ms-2">90</p>
+      <p class="ms-2">HTML</p>
+  </div>
+  <div class=" d-flex  align-items-center competence">
+    <p class="hardNote fw-bold ms-2">90</p>
+    <p class="ms-2">HTML</p>
+</div>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-center mb-3 mt-1">
           <button class="btnViewProfil">Voir profil</button>
         </div>
       </div>
     </div>
+    <div class="cartes">
+      <div class="infoCandidats">
+        <h5 class="mt-2 fw-bold statut">Open to Work</h5>
+        <p class="note fw-bold">94</p>
+        <i class="fas fa-star"></i>
+        <img class="d-flex mx-auto" src="./Ressources/hProfil3.png" alt="profil hommme"></img>
+        <img class="d-flex mx-auto d-none" src="./Ressources/fProfil2.png" alt="profil femme"></img>
+        <h4 class="poste">Développeur web</h4>
+      </div>
+      
+      <div class="contSK">
+        <h6 class="ms-3  fw-bolder">Soft Skills:</h6>
+        <p class="ms-3 softSkills" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
+    </div>
+      <div class="mt-2">
+        <h6 class="ms-3 fw-bold">Hard Skills:</h6>
+        <div class="d-flex flex-wrap px-2 ">
+          <div class=" d-flex align-items-center competence">
+              <p class="hardNote fw-bold ms-2">90</p>
+              <p class="ms-2">HTML </p>
+          </div>
+          <div class=" d-flex  align-items-center competence">
+            <p class="hardNote fw-bold ms-2">90</p>
+            <p class="ms-2">HTML</p>
+        </div>
+        <div class=" d-flex align-items-center competence">
+          <p class="hardNote fw-bold ms-2">90</p>
+          <p class="ms-2">HTML</p>
+      </div>
+      <div class=" d-flex  align-items-center competence">
+        <p class="hardNote fw-bold ms-2">90</p>
+        <p class="ms-2">HTML</p>
+    </div>
+    <div class=" d-flex align-items-center competence">
+      <p class="hardNote fw-bold ms-2">90</p>
+      <p class="ms-2">HTML</p>
+  </div>
+  <div class=" d-flex  align-items-center competence">
+    <p class="hardNote fw-bold ms-2">90</p>
+    <p class="ms-2">HTML</p>
+</div>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-center mb-3 mt-1">
+          <button id="viewProfil" class="btnViewProfil ">Voir profil</button>
+        </div>
+      </div>
+    </div>
+    <div class="cartes">
+      <div class="infoCandidats">
+        <h5 class="mt-2 fw-bold statut">Open to Work</h5>
+        <p class="note fw-bold">94</p>
+        <i class="fas fa-star"></i>
+        <img class="d-flex mx-auto d-none" src="./Ressources/hProfil.png" alt=""></img>
+        <img class="d-flex mx-auto " src="./Ressources/fProfil2.png" alt=""></img>
+        <h4 class="poste">Développeur web</h4>
+      </div>
+      
+      <div class="contSK">
+        <h6 class="ms-3 fw-bolder">Soft Skills:</h6>
+        <p class="ms-3 softSkills" >Curieux, motivé, esprit d'équipe, dsqdsqd</p>
+    </div>
+      <div class="mt-2">
+        <h6 class="ms-3 fw-bold">Hard Skills:</h6>
+        <div class="d-flex flex-wrap px-2 ">
+          <div class=" d-flex align-items-center competence">
+              <p class="hardNote fw-bold ms-2">90</p>
+              <p class="ms-2">HTML</p>
+          </div>
+          <div class=" d-flex  align-items-center competence">
+            <p class="hardNote fw-bold ms-2">90</p>
+            <p class="ms-2">CSS</p>
+        </div>
+        <div class=" d-flex align-items-center competence">
+          <p class="hardNote fw-bold ms-2">90</p>
+          <p class="ms-2">HTML</p>
+      </div>
+      <div class=" d-flex  align-items-center competence">
+        <p class="hardNote fw-bold ms-2">90</p>
+        <p class="ms-2">HTML</p>
+    </div>
+    <div class=" d-flex align-items-center competence">
+      <p class="hardNote fw-bold ms-2">90</p>
+      <p class="ms-2">HTML</p>
+  </div>
+  <div class=" d-flex  align-items-center competence">
+    <p class="hardNote fw-bold ms-2">90</p>
+    <p class="ms-2">HTML</p>
+</div>
+        </div>
+
+        <div class="d-flex align-items-center justify-content-center mb-3 mt-1">
+          <button class="btnViewProfil">Voir profil</button>
+        </div>
+      </div>
+    </div>
+ 
   </div>
 
   <div class="pagination-controls d-flex justify-content-center my-3">
