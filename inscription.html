@@ -48,6 +48,17 @@
             border-radius: 2px;
             transition: background-color 0.3s ease;
         }
+       
+            @media (max-width: 767px) {
+    body {
+        background: url(ressources/bg_inscription_Mobil.png) no-repeat;
+        background-size: cover; 
+        background-position: center center; 
+        height: 100vh; 
+    }
+}
+
+
     </style>
 </head>
 <body>
@@ -98,13 +109,13 @@
                                 <div class="forceMdp ms-2"></div>
                             </div>                       
                     </div>
-                    <div class="mb-5">
+                    <div class="mb-4">
                         <label for="inputPassword" class="form-label fs-5">Confirmez le mot de passe</label>
                         <input id="inputConfirmPassword" minlength="6" maxlength="30" type="password" placeholder="Confirmez votre mot de passe"
                             class="form-control letter-spacing borderColor" required>
                             <p id="errorPassword" class="error fs-5 my-1 ps-2"></p>
                     </div>
-                    <input type="submit" class="form-control btn btn-primary d-flex justify-content-center mx-auto my-2 w-100 letter-spacing fs-4 borderColor" value="Valider">
+                    <input type="submit" class="form-control btn btn-primary d-flex justify-content-center mx-auto my-1 w-100 letter-spacing fs-4 borderColor" value="Valider">
                 </form>
                   
             </div>         

@@ -24,9 +24,9 @@
             font-family: "Montserrat", sans-serif;
             letter-spacing: 1px;
             background:url(./Ressources/bg_login.png) repeat-y;
-         
-            background-size: cover; 
+            background-size: cover;  
         } 
+        
         .formLogin{
          background-color: rgba(0, 59, 94, 0.9);
          color: rgb(255, 255, 255);
@@ -42,6 +42,13 @@
         .letter-spacing {
             letter-spacing: 1px; 
         }
+        @media (max-width: 767px) {
+    body {
+        background: url(ressources/bg_login.png) no-repeat;
+        background-size: cover; 
+        background-position: center center; 
+    }
+}
     </style>
 </head>
 <body>
@@ -65,7 +72,7 @@
                         <span id="errorPassword"></span>
                     </div>
                     <div class="text-center mt-2">
-                        <a class="form-label mt-1 d-inline-block fs-5">Forget password?</a>
+                        <a href="" class="form-label mt-1 d-inline-block fs-5">Forget password?</a>
                     </div>
                     <input type="submit" class="btn btn-primary d-flex justify-content-center mx-auto mt-2 w-100 letter-spacing fs-5 borderColor" value="Valider"><a href="home.html"></a>
                 </form>
