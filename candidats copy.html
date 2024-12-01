@@ -163,37 +163,10 @@
     .modalWidth {
   max-width: 50%;
 }
-.CvPart{
-  width: 100%;
-  height: 400px;
-}
-.carousel-img {
-    width: 200px; 
-    margin-left: 2rem;
-
-   
-}
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
-   display: none;
-   
-}
-.carousel-indicators {
-  bottom: -5rem;
-}
-.carousel-indicators button {
-   background-color: rgb(111, 178, 241) !important;
-   height: 5px !important;
-}
-.carousel-indicators button:hover {
-    background-color: rgb(0, 16, 107) !important; 
-    height: 5px;
+.CV img{
+  width:100%
 }
 
-.carousel-indicators .active {
-    background-color: rgb(0, 72, 150) !important; 
-    height: 5px;
-}
 @media (max-width: 767px) {
   #numberSelect{
     display: none;
@@ -697,41 +670,21 @@ margin-top: 2rem;
             <h5 class="modal-title">CV</h5>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
-          <div class="modal-body bg-dark">
-            <div id="carouselExampleIndicators" class="carousel slide">
-              <div class="carousel-indicators">
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
-              </div>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="CvPart">
-                    <img class="carousel-img" src="./Ressources/user_img.jpg" alt="">
-                  </div>
-                 
-                </div>
-                <div class="carousel-item">
-                  <div class="CvPart">
-                    <img class="carousel-img" src="./Ressources/user_img.jpg" alt="">
-                  </div>
-                
-                </div>
-                <div class="carousel-item">
-                  <div class="CvPart">
-                    <img class="carousel-img" src="./Ressources/user_img.jpg" alt="">
-                  </div>
-                </div>
-              </div>
-              <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Previous</span>
-              </button>
-              <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Next</span>
-              </button>
+          <div class="modal-body ">
+           <div class="row">
+            <div class="col-4 CV bg-secondary">
+              <img src="./Ressources/user_img.jpg" alt="">
+              <h3 class="text-center">Profil</h3>
+              <h4>adresse:</h4>
+              <h4>adresse:</h4>
+              <h4>adresse:</h4>
+
             </div>
+            <div class="col-8">
+              <h2 class="text-center"> Dupont Jack</h2>
+              <h3>Développeur web</h3>
+            </div>
+           </div>
           </div>
           <div class="modal-footer">
             
