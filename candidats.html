@@ -41,166 +41,13 @@
       padding-right: 20px !important;
     }
 
-    .containerCartes {
-      width: 100%;
-      display: flex;
-      overflow-x: auto;
-      background-color: rgba(46, 46, 46, 0.8);
-      background: linear-gradient(0deg, #1b1b1b, #bcd0fc, #313131);
-      background: linear-gradient(0deg, rgba(0, 59, 94, 0.9), rgba(247, 247, 247, 0.877), rgba(0, 59, 94, 0.9));
-    }
-
-    .containerCartes::-webkit-scrollbar {
-      height: 12px;
-    }
-
-    .containerCartes::-webkit-scrollbar-thumb {
-      background-color: rgba(0, 59, 94, 0.9);
-      border-radius: 1rem;
-    }
-
-    .cartes {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      opacity: 0;
-      margin: 2rem 1rem;
-      width: 320px;
-      background-color: rgb(54, 104, 188);
-
-      border-radius: 2rem;
-      border: 4px solid rgb(232, 232, 232);
-      font-family: "Poppins", sans-serif;
-      letter-spacing: 1px;
-      flex-shrink: 0;
-      animation: apparition 0.8s ease forwards;
-      box-shadow: 10px 5px 25px rgba(11, 8, 189, 0.349);
-    }
-
-    .cartes:first-child {
-      margin-left: 2rem;
-    }
-
-    @keyframes apparition {
-      from {
-        opacity: 0;
-        transform: translateX(20px);
-      }
-
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    .infoCandidats {
-      width: 100%;
-      position: relative;
-    }
-
-    .cartes img {
-      width: 60%;
-      opacity: 100%;
-    }
-
-    .statut,
-    .poste {
-      position: absolute;
-      left: 0;
-      right: 0;
-      width: 100%;
-      text-align: center;
-    }
-
-    .statut {
-      top: 0;
-      color: rgb(83, 215, 80);
-      font-size: 1rem;
-    }
-
-    .poste {
-      top: 60%;
-      font-size: 1.2rem;
-      color: white;
-    }
-
-    .note {
-      position: absolute;
-      top: 20%;
-      left: 10%;
-      font-size: 1.6rem;
-    }
-
-    .note,
-    .hardNote {
-      color: rgb(255, 255, 255);
-    }
-
-    .fa-star {
-      position: absolute;
-      top: 20%;
-      right: 10%;
-      font-size: 1.6rem;
-      color: rgb(228, 226, 226);
-      transition: color 0.5s ease;
-      cursor: pointer;
-    }
-
-    .fa-star.active {
-      scale: 1.2;
-      color: rgb(214, 129, 18);
-    }
-
-    .titleSK {
-      position: absolute;
-      text-align: start;
-      top: 85%;
-      left: 5%;
-      font-size: 1rem;
-    }
-
-    .titleHK {
-      font-size: 1rem;
-    }
-
-    .softSkills {
-      font-size: 0.9rem;
-      color: white;
-      margin: -0.4rem 0rem;
-    }
-
-    .hardNote {
-      font-size: 1.1rem;
-    }
-
-    .competence {
-      width: 50%;
-      margin-bottom: -0.8rem;
-    }
-
-    .btnViewProfil {
-      width: 50%;
-      background-color: rgb(83, 215, 80);
-      color: rgb(0, 0, 0);
-      font-size: 1.2rem;
-      padding: 0.2rem;
-      border: none;
-      border-radius: 0.5rem;
-
-    }
-
-    .btnViewProfil:hover {
-      background-color: rgb(60, 173, 58);
-
-    }
-
     .modalWidth {
-      max-width: 800px;
+      max-width: 900px;
     }
 
     .CvPartG {
       background-color: rgb(54, 104, 188);
+  
     }
 
     .CvPartG hr {
@@ -215,11 +62,6 @@
 
     }
 
-    .CV i {
-      color: white;
-      font-size: 1rem;
-    }
-
     .CV strong {
       font-size: 1.1rem;
     }
@@ -230,6 +72,7 @@
 
     .CvPartD {
       background-color: rgb(239, 243, 255);
+      
     }
 
     .CvPartD hr,
@@ -243,7 +86,10 @@
       border-radius: 2px;
       opacity: 1;
     }
-
+    .competenceCV{
+      width: 50%;
+      margin-bottom: -0.8rem;
+    }
 
 
     .CvPartD hr {
@@ -288,80 +134,89 @@
         justify-content: end;
       }
 
-      .containerCartes {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .containerCartes::-webkit-scrollbar {
-        display: none;
-      }
-
-      .cartes {
-        width: 80%;
-        height: auto;
-        margin: 1rem auto;
-      }
-
-      .cartes:first-child {
-        margin: 1rem auto;
-        margin-top: 2rem;
-      }
-
-      .statut {
-        font-size: 1.4rem;
-      }
-
-      .poste {
-        font-size: 1.6rem;
-      }
-
+      
       .modalWidth {
         max-width: 100%;
       }
+     
+      .CV strong {
+      font-size: 0.9rem;
+    }
+
+    .CV li {
+      font-size: 0.7rem;
+    }
+    .CvPartG {
+      padding: 0.3rem;
+    }
+    .CvPartD {
+      padding: 0.1rem;
+    }
+
+    .CV h2 {
+      font-size: 1.1rem;
+    }
+
+    .CV h3 {
+      font-size: 0.9rem;
+      color: rgb(0, 0, 0);
+
+    }
+    .competenceCV{
+      width: 100%;
+    }
+    .CV p {
+      font-size: 0.7rem;
+      color: white;
+    }
     }
   </style>
 </head>
 
 <body>
-  <nav class="navbar navbar-expand-lg navColor">
+   <!-- Navbar -->
+   <nav class="navbar navbar-expand-lg navColor">
     <div class="container-fluid">
       <img class="logo mx-2" src="./Ressources/logo_starZup.png" alt="">
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="d-flex user-icons">
-        <i class="fa-regular fa-bell mx-1"></i>
+        <i class="fa-solid fa-bell mx-1 d-block"></i>
+        <div class="notif"></div>
         <li class="nav-item dropdown d-flex align-items-center">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
             <i class="fa-solid fa-user mx-1"></i></a>
           <ul class="dropdown-menu custom-dropdown">
             <li><a class="dropdown-item" href="./login.html">Connexion</a></li>
             <li><a class="dropdown-item" href="./inscription.html">Inscription</a></li>
-            <li><a class="dropdown-item" href="./compte.html">Modifier profil</a></li>
-            <li><a class="dropdown-item" href="#">Créer un CV</a></li>
+            <li><a class="dropdown-item" href="./compte.html">Compte</a></li>
           </ul>
         </li>
       </div>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <div class="collapse navbar-collapse test" id="navbarSupportedContent">
         <ul class="navbar-nav d-flex mx-auto my-auto mb-2 mb-lg-0">
-          <li class="nav-item mx-2">
+          <li class="nav-item mx-2 listMenu">
             <a class="nav-link" aria-current="page" href="./index.html">Accueil</a>
           </li>
-          <li class="nav-item mx-2">
+          <li class="nav-item mx-2 listMenu">
             <a class="nav-link" href="./candidats.html">Candidats</a>
           </li>
-          <li class="nav-item mx-2">
+          <li class="nav-item mx-2 listMenu">
+            <a class="nav-link" href="./favoris.html">Favoris</a>
+          </li>
+          <li class="nav-item mx-2 listMenu">
             <a class="nav-link" href="./rendez-vous.html">Rendez-vous</a>
           </li>
-          <li class="nav-item mx-2">
+          <li class="nav-item mx-2 listMenu">
             <a class="nav-link" href="./contact.html">Contact</a>
           </li>
+          
         </ul>
       </div>
     </div>
   </nav>
+
   <div class="container-fluid">
     <div class="row">
       <div class="col my-3 d-flex align-items-center menu">
@@ -396,14 +251,16 @@
         <h3 class="mt-2 fw-bold statut">Open to Work</h3>
         <p class="note fw-bold">94</p>
         <i class="fas fa-star"></i>
-        <img class="d-flex mx-auto" src="./Ressources/fProfil3.png" alt="profil hommme"></img>
+        <img class="d-flex mx-auto" src="./Ressources/fProfil4.png" alt="profil hommme"></img>
         <img class="d-flex mx-auto d-none" src="./Ressources/fProfil2.png" alt="profil femme"></img>
         <h2 class="poste">Développeur web</h2>
         <h3 class="fw-bolder text-start titleSK">Soft Skills:</h3>
       </div>
       <p class="ms-3 softSkills">Curieux, motivé, esprit d'équipe, dsqdsqd</p>
-      <div class="mt-2">
+      <div class="HK">
         <h3 class="ms-3 fw-bold titleHK">Hard Skills:</h3>
+      </div>
+        
         <div class="d-flex flex-wrap px-2 ">
           <div class=" d-flex align-items-center competence">
             <p class="hardNote fw-bold ms-2">90</p>
@@ -429,12 +286,10 @@
             <p class="hardNote fw-bold ms-2">90</p>
             <p class="ms-2">HTML</p>
           </div>
-        </div>
-
-        <div class="d-flex align-items-center justify-content-center mb-2 mt-1">
-          <button id="viewProfil" class="btnViewProfil" type="button" data-bs-toggle="modal"
-            data-bs-target="#viewCV">Voir profil</button>
-        </div>
+      </div>
+      <div class="d-flex align-items-center justify-content-center mb-2 mt-1">
+        <button id="viewProfil" class="btnViewProfil" type="button" data-bs-toggle="modal"
+          data-bs-target="#viewCV">Voir plus</button>
       </div>
     </div>
 
@@ -455,149 +310,98 @@
         <div class="modal-body py-1">
           <div class="row CV">
             <div class="col-4 CvPartG">
-              <img src="./Ressources/user_img.jpg" alt="">
+              <img src="./Ressources/fProfil4.png" alt="Profil">
               <h3 class="text-center">Profil</h3>
               <hr>
-              <div class="d-flex justify-content-center mt-2">
-                <i class="fa-solid fa-location-dot"></i>
-                <p class="mx-1 my-0">127 rue de Paris <br> 75001 Paris</p>
-              </div>
-              <div class="d-flex align-items-center justify-content-center">
-                <i class="fa-solid fa-phone"></i>
-                <p class="mx-1 my-0 ">+33 1 23 34 56 78</p>
-              </div>
-              <div class="d-flex align-items-center justify-content-center">
-                <i class="fa-solid fa-envelope"></i>
-                <p class="mx-1 my-0">contact@exemple.fr</p>
-              </div>
-              <div class="d-flex align-items-center justify-content-center">
-                <i class="fa-solid fa-globe"></i>
-                <p class="mx-1 my-0">https:/siteperso.fr/</p>
-              </div>
+              <p>
+                Développeur web passionné, je suis motivé par les défis techniques et animé par le désir de fournir des produits de haute qualité. 
+              </p>
               <div class="mt-1">
                 <h3 class="text-center mt-2">Soft Skills</h3>
                 <hr>
-                <p class=" text-center my-1 ">curieux, motivé, esprit d'équipe, perseverant, créatif</p>
+                <p class="text-center my-1">Curieux, motivé, esprit d'équipe, persévérant, créatif</p>
               </div>
               <div class="mt-1">
-                <h3 class="text-center mt-2">Hard slikks</h3>
+                <h3 class="text-center mt-2">Hard Skills</h3>
                 <hr>
                 <div class="d-flex flex-wrap mt-2">
-                  <div class=" d-flex align-items-center competence">
-                    <p class="hardNote fw-bold ms-2">90</p>
-                    <p class="ms-2">HTML </p>
-                  </div>
-                  <div class=" d-flex align-items-center competence">
+                  <div class="d-flex align-items-center competenceCV">
                     <p class="hardNote fw-bold ms-2">90</p>
                     <p class="ms-2">HTML</p>
                   </div>
-                  <div class=" d-flex align-items-center competence">
-                    <p class="hardNote fw-bold ms-2">90</p>
-                    <p class="ms-2">HTML</p>
+                  <div class="d-flex align-items-center competenceCV">
+                    <p class="hardNote fw-bold ms-2">85</p>
+                    <p class="ms-2">CSS</p>
                   </div>
-                  <div class=" d-flex  align-items-center competence">
-                    <p class="hardNote fw-bold ms-2">90</p>
-                    <p class="ms-2">HTML</p>
+                  <div class="d-flex align-items-center competenceCV">
+                    <p class="hardNote fw-bold ms-2">85</p>
+                    <p class="ms-2">JavaScript</p>
                   </div>
-                  <div class=" d-flex align-items-center competence">
-                    <p class="hardNote fw-bold ms-2">90</p>
-                    <p class="ms-2">HTML</p>
+                  <div class="d-flex align-items-center competenceCV">
+                    <p class="hardNote fw-bold ms-2">80</p>
+                    <p class="ms-2">React.js</p>
                   </div>
-                  <div class=" d-flex  align-items-center competence">
-                    <p class="hardNote fw-bold ms-2">90</p>
-                    <p class="ms-2">HTML</p>
+                  <div class="d-flex align-items-center competenceCV">
+                    <p class="hardNote fw-bold ms-2">75</p>
+                    <p class="ms-2">Node.js</p>
                   </div>
-                  <div class=" d-flex align-items-center competence">
-                    <p class="hardNote fw-bold ms-2">90</p>
-                    <p class="ms-2">HTML</p>
-                  </div>
-                  <div class=" d-flex  align-items-center competence">
-                    <p class="hardNote fw-bold ms-2">90</p>
-                    <p class="ms-2">HTML</p>
-                  </div>
-                  <div class=" d-flex align-items-center competence">
-                    <p class="hardNote fw-bold ms-2">90</p>
-                    <p class="ms-2">HTML</p>
-                  </div>
-                  <div class=" d-flex  align-items-center competence">
-                    <p class="hardNote fw-bold ms-2">90</p>
-                    <p class="ms-2">HTML</p>
+                  <div class="d-flex align-items-center competenceCV">
+                    <p class="hardNote fw-bold ms-2">70</p>
+                    <p class="ms-2">MongoDB</p>
                   </div>
                 </div>
                 <div class="mt-1">
-                  <h3 class="text-center mt">Langues</h3>
+                  <h3 class="text-center">Langues</h3>
                   <hr>
-                  <div class="mt-1">
-                    <p class=" text-center my-0 ">Anglais: B2</p>
-                    <p class=" text-center my-0 ">Espagnol: B2</p>
-                  </div>
-
+                  <p class="text-center my-0">Anglais: B2</p>
+                  <p class="text-center my-0">Espagnol: B2</p>
                 </div>
-
               </div>
-
             </div>
             <div class="col-8 CvPartD">
-              <h3 class="text-center my-0">Dupont Jack</h3>
-              <h2 class="text-center my-0">Développeur web</h2>
+              <h2 class="text-center my-0">Développeur Web</h2>
               <div>
-                <h3 class="text-center">Experience</h3>
+                <h3 class="text-center mt-2">Expériences professionnelles</h3>
                 <hr>
                 <ul>
                   <li>
-                    <strong>Développeur Front-End</strong> - Agence CréaWeb (2019 - 2022) <br>
-                    Développement de sites web responsive avec HTML, CSS et JavaScript. Création de composants
-                    interactifs et optimisation de la performance des sites.
+                    <strong>Développeur Front-End</strong> - Agence CréaWeb (2019 - 2022)<br>
+                    Développement de sites web responsives avec HTML, CSS et JavaScript. Création de composants interactifs et optimisation des performances des sites web.
                   </li>
                   <li>
-                    <strong>Développeur Full Stack</strong> - Start-up Innovatech (2022 - 2023) <br>
-                    Conception et maintenance d'applications web avec React.js, Node.js et MongoDB. Collaboration avec
-                    des équipes agiles pour développer des solutions innovantes.
-                  </li>
-                  <li>
-                    <strong>Développeur Front-End</strong> - Agence CréaWeb (2019 - 2022) <br>
-                    Développement de sites web responsive avec HTML, CSS et JavaScript. Création de composants
-                    interactifs et optimisation de la performance des sites.
-                  </li>
-                  <li>
-                    <strong>Développeur Full Stack</strong> - Start-up Innovatech (2022 - 2023) <br>
-                    Conception et maintenance d'applications web avec React.js, Node.js et MongoDB. Collaboration avec
-                    des équipes agiles pour développer des solutions innovantes.
+                    <strong>Développeur Full Stack</strong> - Start-up Innovatech (2022 - 2023)<br>
+                    Conception et maintenance d’applications web avec React.js, Node.js et MongoDB. Participation à des équipes agiles pour développer des solutions novatrices.
                   </li>
                 </ul>
               </div>
               <div>
-              <h3 class="text-center">Formation</h3>
-              <hr>
-              <ul>
-                <li>
-                  <strong>Licence Informatique</strong> - Université de Lyon (2016 - 2019) <br>
-                  Cours approfondis en programmation, algorithmes et bases de données.
-                </li>
-                <li>
-                  <strong>Certification Développeur Web</strong> - OpenClassrooms (2020) <br>
-                  Formation pratique sur les technologies web modernes, dont React et API REST.
-                </li>
-
-              </ul>
-
-            </div>
-            <div>
-              <h3 class="text-center">Centre d'interêt</h3>
-              <hr>
-              <ul>
-                <li>Développement de projets open-source</li>
-                <li>Jeux vidéo et création de mods</li>
-                <li>Voyages et exploration de nouvelles cultures</li>
-              </ul>
-
+                <h3 class="text-center">Formation</h3>
+                <hr>
+                <ul>
+                  <li>
+                    <strong>Licence Informatique</strong> - Université de Lyon (2016 - 2019)<br>
+                    Formation approfondie en programmation, algorithmes et bases de données.
+                  </li>
+                  <li>
+                    <strong>Certification Développeur Web</strong> - OpenClassrooms (2020)<br>
+                    Apprentissage des technologies web modernes, incluant React et les API REST.
+                  </li>
+                </ul>
+              </div>
+              <div>
+                <h3 class="text-center">Centres d'intérêt</h3>
+                <hr>
+                <ul>
+                  <li>Développement de projets open-source</li>
+                  <li>Jeux vidéo et création de mods</li>
+                  <li>Voyages et exploration de nouvelles cultures</li>
+                </ul>
+              </div>
             </div>
           </div>
-
-        </div>
+          
       </div>
       <div class="modal-footer py-0">
-
         <button type="button" class="btn btn-primary">Télecharger</button>
       </div>
     </div>
