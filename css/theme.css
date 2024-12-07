@@ -4,7 +4,17 @@
     padding: 0;
   }
   body{
- 
+ width: 100%;
+  }
+/* boutons */
+  .btn-primary {
+    background-color: rgba(0, 59, 94, 0.9);
+    border: none ;
+    transition: background 0.3s ease;
+  }
+
+  .btn-primary:hover {
+    background-color: rgba(0, 45, 70, 0.9);
   }
 
 /* NavBarre */
@@ -26,7 +36,7 @@
       border-radius: 1rem;      
 }
 .navbar-nav a{
-font-family: "Montserrat", sans-serif;
+font-family: "Poppins", sans-serif;   
 padding: 0.2rem;
 }
 .user-icons i{
@@ -104,7 +114,7 @@ padding: 0.2rem 0.8rem  !important;
 .navbar-toggler {
   position: relative;
   z-index: 20;
-  background-color: white !important; 
+  background-color: white; 
 }
 .navbar-nav a:hover,.navbar i:hover, .imgUser:hover {   
     scale: 1; 

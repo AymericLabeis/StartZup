@@ -18,7 +18,7 @@
             font-family: "Poppins", sans-serif;   
             font-family: "Montserrat", sans-serif;
             letter-spacing: 1px;
-            background:url(./Ressources/bg_inscription.png) repeat-y;
+            background:url(./Ressources/bg_login.png) repeat-y;
             background-size: cover; 
         } 
         .formLogin{
@@ -49,15 +49,22 @@
             transition: background-color 0.3s ease;
         }
        
-            @media (max-width: 767px) {
+        @media (max-width: 767px) {
     body {
-        background: url(ressources/bg_inscription_Mobil.png) no-repeat;
+        background: url(ressources/bg_login.png) no-repeat;
         background-size: cover; 
         background-position: center center; 
-        height: 100vh; 
+        height: 100vh;
     }
 }
-
+@media screen and (min-width:768px) and (max-width:1279px)  {
+    body {
+   height: 100vh;
+    }
+    .formLogin{
+        width: 80%;
+    }
+}
 
     </style>
 </head>
