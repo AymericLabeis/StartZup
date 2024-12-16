@@ -7,18 +7,16 @@
  width: 100%;
   }
 /* boutons */
-  .btn-primary {
+.btn-primary {
     background-color: rgba(0, 59, 94, 0.9);
     border: none ;
     transition: background 0.3s ease;
-  }
-
-  .btn-primary:hover {
+}
+.btn-primary:hover {
     background-color: rgba(0, 45, 70, 0.9);
-  }
-
-/* NavBarre */
-.logo{
+}
+ /* NavBarre */
+ .logo{
   width: 3.5rem;
 }
 .imgUser{
@@ -43,6 +41,11 @@ padding: 0.2rem;
 position: relative;
 padding: 0.6rem;
 }
+.user-icons img{
+ width: 55px;
+  padding: 0.6rem;
+  border-radius: 50%;
+  }
 .notif{
   position: absolute;
   top: 1rem;
@@ -87,7 +90,6 @@ align-items: center;
 order: 2;
 }
 
-
 @media (max-width: 992px) {
 .user-icons {
   position: absolute;
@@ -129,15 +131,16 @@ padding: 0.2rem 0.8rem  !important;
   color: rgb(7, 0, 0);
  }
 } 
-
 /* cartes candidats */
 .containerCartes {
   width: 100%;
+  min-height: 480px;
   display: flex;
   overflow-x: auto;
-  background-color: rgba(46, 46, 46, 0.8);
+  background-color: rgba(0, 59, 94, 0.9);
+ /* background-color: rgba(46, 46, 46, 0.8);
   background: linear-gradient(0deg, #1b1b1b, #bcd0fc, #313131);
-  background: linear-gradient(0deg, rgba(0, 59, 94, 0.9), rgba(247, 247, 247, 0.877), rgba(0, 59, 94, 0.9));
+  background: linear-gradient(0deg, rgba(0, 59, 94, 0.9), rgba(247, 247, 247, 0.877), rgba(0, 59, 94, 0.9));*/
 }
 .containerCartes::-webkit-scrollbar {
   height: 12px;
@@ -154,16 +157,20 @@ padding: 0.2rem 0.8rem  !important;
   opacity: 0;
   margin: 2rem 1rem;
   width: 320px;
-  background-color: rgb(54, 104, 188);
+  background-color: rgb(41, 41, 41); /* Fond noir */
   border-radius: 2rem;
-  border: 4px solid rgb(232, 232, 232);
+  border: 4px solid rgb(0, 255, 123); 
+  border: 4px solid rgb(221, 221, 221); 
   font-family: "Poppins", sans-serif;
   letter-spacing: 1px;
   flex-shrink: 0;
   animation: apparition 0.8s ease forwards;
-  box-shadow: 10px 5px 25px rgba(11, 8, 189, 0.349);
+  box-shadow: 10px 5px 25px rgba(0, 255, 123, 0.4); 
+  box-shadow: 10px 5px 25px rgba(248, 248, 248, 0.4); 
 }
-
+.cartes:hover{
+  scale: 1.03;
+}
 .cartes:first-child {
   margin-left: 2rem;
 }
@@ -187,7 +194,7 @@ padding: 0.2rem 0.8rem  !important;
 
 .cartes img {
   width: 60%;
-  opacity: 100%;
+  opacity: 60%;
 }
 
 .statut,
@@ -201,14 +208,17 @@ padding: 0.2rem 0.8rem  !important;
 
 .statut {
   top: 0;
-  color: rgb(83, 215, 80);
+  color: rgb(0, 255, 123); 
   font-size: 1rem;
 }
 
 .poste {
   top: 60%;
   font-size: 1.2rem;
-  color: white;
+  color: rgb(106, 90, 255);
+  color: rgb(255, 200, 0);
+  color: rgba(59, 166, 228, 0.9);
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.9), 0 0 10px rgba(255, 255, 255, 0.3), 0 0 30px rgba(106, 90, 255, 0.8);
 }
 
 .note {
@@ -216,13 +226,21 @@ padding: 0.2rem 0.8rem  !important;
   top: 20%;
   left: 10%;
   font-size: 1.6rem;
+  color: rgb(255, 200, 0);
+  color: rgb(214, 129, 18);
 }
 
-.note,
+
 .hardNote {
-  color: rgb(255, 255, 255);
+  color: rgba(59, 166, 228, 0.9);
+  color: rgb(255, 200, 0);
+  color: rgb(214, 129, 18);
+ 
 }
-
+.hardSkills{
+  color: rgb(200, 200, 200); 
+  
+}
 .fa-star {
   position: absolute;
   top: 20%;
@@ -244,6 +262,9 @@ padding: 0.2rem 0.8rem  !important;
   top: 90%;
   left: 5%;
   font-size: 1rem;
+  color: rgb(0, 255, 123);
+  color: rgba(59, 166, 228, 0.9);
+ 
 }
 .HK {
   justify-content: flex-start; 
@@ -252,14 +273,16 @@ padding: 0.2rem 0.8rem  !important;
 .titleHK {
   font-size: 1rem;
   margin-top: -1rem; 
-}
-
-.softSkills {
-  font-size: 0.9rem;
-  color: white;
+  color: rgb(0, 255, 123);
+  color: rgba(59, 166, 228, 0.9);
+ 
+ 
   
 }
-
+.softSkills {
+  font-size: 0.9rem;
+  color: rgb(200, 200, 200);
+}
 .hardNote {
   font-size: 1.1rem;
 }
@@ -272,10 +295,10 @@ padding: 0.2rem 0.8rem  !important;
 .btnViewProfil {
   width: 120px;
   background-color: rgb(83, 215, 80);
+  border: none;
   color: rgb(0, 0, 0);
   font-size: 1.2rem;
   padding: 0.2rem;
-  border: none;
   border-radius: 0.5rem;
   text-align: center;
   text-decoration: none;
@@ -284,9 +307,94 @@ padding: 0.2rem 0.8rem  !important;
 
 .btnViewProfil:hover {
   background-color: rgb(60, 173, 58);
+ 
+}
 
+/* CV candidat */
+.imgNote{
+  position: relative;
+}
+.imgNote img {
+  display: flex;
+  margin: 1rem auto;
+  width: 70%;
+  border-radius: 50%;
+}
+.SZ{
+  position: absolute;
+  top: 2%;
+  color: rgb(255, 255, 255);
+  font-size: 1.6rem;
+}
+.noteCV{
+ position: absolute;
+  top: 30%;
+  left: 5%;
+  font-size: 1.8rem;
+  color: rgb(255, 255, 255);
+}
+.CV strong {
+  font-size: 1.2rem;
+}
+
+.CV li {
+  font-size: 1.2rem;
+}
+
+.CvPartG hr{
+  background-color: rgb(255, 255, 255);
+}
+.CvPartG{
+background-color: rgb(54, 104, 188);
+}
+.CvPartG p{
+  color: rgb(255, 255, 255);
+}
+.CvPartG h3{
+font-size: 1.6rem;
+}
+.CvPartG hr
+{
+  margin: 0 auto;
+  margin-top: -0.4rem;
+  width: 90%;
+  height: 1px;
+  border: none;
+  opacity: 1;
+}
+.CvPartD {
+  background-color: rgb(247, 249, 255);
+}
+.CvPartD hr {
+  margin: 0 auto;
+  margin-top: -0.4rem;
+  width: 90%;
+  height: 2px;
+  border: none; 
+  opacity: 1;
+  background-color: rgb(54, 104, 188);
+}
+.CvPartD h3{
+  font-size: 1.6rem;
+}
+.descSize{
+  font-size: 1.1rem;
+}
+.competenceCV {
+width: 50%;
+margin-bottom: -0.8rem;
+}
+.competenceCV p{
+font-size: 1.3rem;
+  }
+.langues img {
+  width: 40px;
+}
+.langues span{
+  font-size: 1.2rem;
 }
 @media (max-width: 767px) {
+  /* cartes candidats */
   .containerCartes {
     flex-direction: column;
     align-items: center;
@@ -314,5 +422,60 @@ padding: 0.2rem 0.8rem  !important;
   .poste {
     font-size: 1.6rem;
   }
+
+  /* CV candidat */
+  .SZ{
+    font-size: 1rem;
+  }
+  .noteCV{
+     font-size: 1.1rem;
+   }
+   .imgNote img {
+    margin: 0.4rem auto;
+  }
+  .CV strong {
+    font-size: 0.9rem;
+  }
+.CV ul{
+  padding-left: 1.1rem;
+}
+  .CV li {
+    font-size: 0.7rem;
+  }
+
+  .CvPartG {
+    padding: 0.3rem;
+  }
+
+  .CvPartD {
+    padding: 0.1rem;
+  }
+
+  .CvPartG h3{
+    font-size: 1.1rem;
+    margin-top: 0.5rem !important;
+    }
+    .CvPartD h3{
+      font-size: 1.1rem;
+    }
+  .descSize, .descSize i{
+    font-size: 0.6rem !important;
+  }
+  .competenceCV {
+    width: 100%;
+    justify-content: center;
+
+  }
+
+  .competenceCV p{
+    font-size: 0.9rem;
+
+      }
+    .langues img {
+      width: 30px;
+    }
+    .langues span{
+      font-size: 1rem;
+    }
 
 }

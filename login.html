@@ -63,19 +63,19 @@
     <div class="container">
         <div class="row d-flex justify-content-center align-items-center ">          
             <div class="col-md-6 col-lg-6 col-11 justify-content-center align-items-center py-2 px-4 formLogin">
-                <form action="" method="post">
+                <form action="./php/login.php" method="post">
                     <div class="d-flex align-items-center justify-content-center pt-2 my-2 titleConnexion">
                     <h2>Connexion</h2>
                     </div>
                     <div class="mb-2 ">
                         <label for="inputEmail" class="form-label fs-5">Adresse E-mail</label>
-                        <input id="inputEmail" minlength="5" maxlength="50" type="email" placeholder="Entrez votre e-mail"
+                        <input id="inputEmail" name='email' minlength="5" maxlength="50" type="email" placeholder="Entrez votre e-mail"
                             class="form-control letter-spacing borderColor" aria-describedby="emailHelp" required>
                         <span id="errorEmail"></span>
                     </div>
                     <div class="mb-2">
                         <label for="inputPassword" class="form-label fs-5">Mot de passe</label>
-                        <input id="inputPassword" minlength="6" maxlength="30" type="password" placeholder="Entrez votre mot de passe"
+                        <input id="inputPassword" name='motDePasse' minlength="6" maxlength="30" type="password" placeholder="Entrez votre mot de passe"
                             class="form-control letter-spacing borderColor" required>
                         <span id="errorPassword"></span>
                     </div>
